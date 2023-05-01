@@ -1,9 +1,7 @@
 def count_neighbours(some_list: list) -> int:
     count = 0
-    for i in range(len(some_list)):
-        prev = some_list[i-1] if i > 0 else some_list[i]
-        next = some_list[i+1] if i < len(some_list)-1 else some_list[i]
-        if some_list[i] > prev and some_list[i] > next:
+    for i in range(1, len(some_list)-1):
+        if some_list[i] > some_list[i-1] and some_list[i] > some_list[i+1]:
             count += 1
     return count
 
